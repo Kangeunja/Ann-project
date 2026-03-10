@@ -1,8 +1,5 @@
 import { useEffect, useState } from "react";
 import { supabase } from "./supabaseClient";
-
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
 import "./App.css";
 
 interface Post {
@@ -12,7 +9,7 @@ interface Post {
 }
 function App() {
   const [posts, setPosts] = useState<Post[]>([]);
-  const [loading, setLoading] = useState(true);
+  // const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     async function getPosts() {
@@ -25,7 +22,7 @@ function App() {
         console.log("연결 성공! 가져온 데이터:", data);
         setPosts(data);
       }
-      setLoading(false);
+      // setLoading(false);
     }
 
     getPosts();
