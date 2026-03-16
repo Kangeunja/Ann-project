@@ -1,0 +1,29 @@
+@use "./variables" as v;
+
+// 모든 요소 초기화
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+// 문서 전체 기본 설정
+html,
+body {
+  width: 100%;
+  overflow-x: hidden;
+  font-family: v.$title-font;
+}
+
+// 리액트 루트 컨테이너 설정
+#root {
+  width: 100%;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+// 공통 링크 스타일
+a {
+  text-decoration: none;
+  color: inherit;
+}

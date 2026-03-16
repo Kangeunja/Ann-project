@@ -1,0 +1,44 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  border-style: none;
+  display: block;
+}
+
+ul,
+ol,
+li,
+dl,
+dt,
+dd {
+  list-style: none;
+}
+
+a {
+  display: block;
+  color: black;
+  background-color: transparent;
+  font-size: inherit;
+  text-decoration: none;
+}
+
+html,
+body,
+#root {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+/* .layout {
+  display: flex;
+  flex-direction: column;
+  overflow-y: hidden;
+} */
+
+/* .content-wrap {
+  flex: 1;
+} */

@@ -1,0 +1,33 @@
+@use "./variables" as v;
+
+// 제목 아래 장식선을 만드는 믹스인
+@mixin title-line($color: white) {
+  &::after {
+    content: "";
+    width: 45px;
+    height: 5px;
+    background-color: $color;
+    display: block;
+    margin: 20px auto 0;
+  }
+}
+
+// 가로 중앙 정렬을 위한 믹스인
+@mixin flex-center-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+// 컨테이너 중앙 정렬
+@mixin container($width: v.$layout-width) {
+  width: $width;
+  margin: 0 auto;
+}
+
+// 1600px 이상일 때 적용되는 믹스인
+@mixin desktop-large {
+  @media (min-width: 1600px) {
+    @content; // 이 자리에 우리가 작성한 스타일이 들어갑니다!
+  }
+}

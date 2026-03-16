@@ -1,0 +1,45 @@
+@use "../../styles/variables" as v;
+
+.footer {
+  width: 100vw;
+  height: 100px;
+  background-color: #006400;
+
+  &-container {
+    width: v.$layout-width;
+    height: 100%;
+    margin: 0 auto;
+    display: flex;
+    position: relative;
+    align-items: center;
+  }
+
+  &-info {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 15px;
+  }
+
+  &-icon__wrap {
+    margin-left: auto;
+
+    .footer-icon {
+      width: 20px;
+      height: 20px;
+      background-color: transparent;
+      border: none;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+
+      &.youtube {
+        background-image: url("../../assets/img/main/footer-icon1.png");
+      }
+
+      &.facebook {
+        background-image: url("../../assets/img/main/footer-icon2.png");
+      }
+    }
+  }
+}
