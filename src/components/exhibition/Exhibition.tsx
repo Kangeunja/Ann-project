@@ -1,44 +1,8 @@
-import { useState } from "react";
 import "./Exhibition.scss";
 import { useQuery } from "@tanstack/react-query";
 import { supabase } from "../../supabaseClient";
 
-// const exhibition_tabs = [
-//   {
-//     id: "preview",
-//     label: "전시 미리보기",
-//   },
-
-//   {
-//     id: "zons",
-//     label: "존 구성",
-//   },
-// ];
-
 const Exhibition = () => {
-  const [activeTab, setActiveTab] = useState("preview");
-
-  // 전시 미리보기 데이터 가져오기
-  const { data: previewImages } = useQuery({
-    queryKey: ["previewImages"],
-    queryFn: async () => {
-      const { data } = await supabase
-        .from("preview_content")
-        .select("image_urls");
-      return data;
-    },
-  });
-
-  // 존 구성 데이터 가져오기
-  const { data: zoneImages } = useQuery({
-    queryKey: ["zoneImages"],
-    queryFn: async () => {
-      const { data } = await supabase.from("zone_content").select("*");
-      // console.log(data);
-      return data;
-    },
-  });
-
   // 챕터 데이터 가져오기
   const { data: chapterImages } = useQuery({
     queryKey: ["chapterImages"],
@@ -166,35 +130,6 @@ const Exhibition = () => {
             </div>
           );
         })}
-
-        {/* <div className="tab-content">
-          {activeTab === "preview" && (
-            <div className="preview-content__img-wrap">
-              {previewImages?.[0]?.image_urls.map(
-                (item: any, index: number) => (
-                  <div className="preview-content__img" key={index}>
-                    <img src={item} alt="" />
-                  </div>
-                ),
-              )}
-            </div>
-          )}
-
-          {activeTab === "zons" && (
-            <div className="zone-content__img-wrap">
-              {zoneImages?.map((item: any, index: number) => (
-                <div className="zone-content__box">
-                  <div className="zone-content__title" key={index}>
-                    {item.title}
-                  </div>
-                  <div className="zone-content__img">
-                    <img src={item.image_urls} alt="" />
-                  </div>
-                </div>
-              ))}
-            </div>
-          )}
-        </div> */}
       </div>
     </div>
   );
