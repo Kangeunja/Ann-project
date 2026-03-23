@@ -1,18 +1,21 @@
 // 폰트 설정
-$title-font: "NotoSansKR", sans-serif;
+$font-normal: "NotoSansKR", sans-serif;
 $font-main: "JetBrainsMono", sans-serif;
 $font-point: "PoorStory", sans-serif;
-$font-title: "DoHyeon", sans-serif;
+$font-dohyeon: "DoHyeon", sans-serif;
+$font-dekko: "Dekko", sans-serif;
 
-$fs-main-title: 60px;
+// 폰트 사이즈
+$fs-main-size: 60px;
 
 // 색상 설정
 $clr-point-color: #f87c66;
-$clr-section-bg: #9a4c48;
+$clr-section-bar: #9a4c48;
 $clr-white: white;
+$clr-black: black;
 $clr-bottom-bg: #db9a96;
 
-// 경로
+// 메인 이미지경로
 $img-path: "../../assets/img/main/main.png";
 
 // 레이아웃

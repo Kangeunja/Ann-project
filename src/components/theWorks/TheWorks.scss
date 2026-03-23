@@ -1,0 +1,54 @@
+@use "../../styles/variables" as v;
+@use "../../styles/mixins" as m;
+
+.theworks {
+  background-color: v.$clr-white;
+  padding-top: 50px;
+
+  &-container {
+    @include m.container;
+  }
+
+  &-title {
+    color: v.$clr-black;
+    font-size: 25px;
+    font-family: v.$font-dohyeon;
+    text-align: center;
+    margin-bottom: 100px;
+  }
+}
+
+.tab-menu {
+  color: #c2c2c2;
+  display: flex;
+  gap: 30px;
+  font-size: 25px;
+  font-family: v.$font-dohyeon;
+  margin-bottom: 30px;
+
+  li {
+    cursor: pointer;
+  }
+
+  .active {
+    color: v.$clr-black;
+  }
+}
+
+.works-list {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  flex-wrap: wrap;
+  gap: 80px 30px;
+  margin-bottom: 100px;
+
+  .works-title {
+    color: v.$clr-black;
+    font-weight: bold;
+  }
+
+  .works-artist {
+    font-size: 13px;
+    color: #bababa;
+  }
+}

@@ -28,6 +28,6 @@
 // 1600px 이상일 때 적용되는 믹스인
 @mixin desktop-large {
   @media (min-width: 1600px) {
-    @content; // 이 자리에 우리가 작성한 스타일이 들어갑니다!
+    @content;
   }
 }

@@ -3,218 +3,184 @@
 @use "../../styles/mixins" as m;
 
 .main {
-  width: 100vw;
-  height: 100vh;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-color: v.$clr-point-color;
-  background-image: url(v.$img-path);
   position: relative;
+  width: 100vw;
+  height: 90vh;
+  overflow: hidden;
+
+  &-bg-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: right bottom;
+    background-image: url(v.$img-path);
+  }
 
   @include m.desktop-large {
-    height: min(
-      60vw,
-      100vh
-    ); /* 화면 너비의 60% 정도로 높이를 줄여서 비율 유지 */
+    height: min(60vw, 92vh);
   }
 
   &-wrap {
     display: flex;
     flex-direction: column;
     position: absolute;
-    top: 50%;
+    top: 40%;
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
+
+    @include m.desktop-large {
+      top: 50%;
+    }
   }
 
   &-title {
-    font-size: v.$fs-main-title;
+    font-size: v.$fs-main-size;
     font-family: v.$font-main;
-    color: v.$clr-point-color;
+    color: v.$clr-white;
   }
 
-  &sub__title {
+  &-sub__title {
     font-size: 30px;
     color: v.$clr-white;
-    font-family: v.$font-point;
+    font-family: v.$font-dohyeon;
   }
 }
 
 .section {
   width: 100%;
-  background-color: v.$clr-section-bg;
-  padding: v.$section-padding;
+  background-color: v.$clr-white;
+  padding-top: 50px;
+  box-sizing: border-box;
 
   &-container {
     width: v.$layout-width;
     margin: 0 auto;
   }
 
-  &-title {
-    color: v.$clr-white;
-    font-family: v.$font-title;
-    font-size: 35px;
-    text-align: center;
-    margin-bottom: 50px;
-
-    @include m.title-line;
-
-    @include m.desktop-large {
-      padding-top: 100px;
-    }
-  }
-
-  &-con__wrap {
+  &-top__wrap {
     display: flex;
     justify-content: space-between;
+    margin-bottom: 10px;
   }
 
   &-img {
-    width: 381px;
-    height: 257px;
-    background-color: v.$clr-white;
-  }
-
-  &-info {
-    width: 700px;
-    height: 257px;
-    display: flex;
-    align-items: center;
-  }
-}
-
-.section-bottom {
-  width: 100%;
-  background-color: v.$clr-bottom-bg;
-  padding: 30px;
-
-  @include m.flex-center-column;
-
-  p {
-    color: #9a4c48;
-    font-size: 20px;
-    font-family: v.$font-title;
-  }
-
-  .icon {
-    width: 20px;
-    height: 20px;
+    width: 247px;
+    height: 414px;
+    background-image: url("../../assets/img/main/section-img.png");
     background-size: contain;
     background-repeat: no-repeat;
-
-    &.top {
-      background-image: url("/src/assets/img/main/mark-top.png");
-    }
-
-    &.bottom {
-      background-image: url("/src/assets/img/main/mark-bottom.png");
-    }
-  }
-}
-
-.section-exhibition {
-  padding: v.$section-padding;
-  width: 100%;
-  background-color: v.$clr-white;
-
-  &__container {
-    @include m.container;
   }
 
-  &__title {
-    font-size: 25px;
-    font-family: v.$font-title;
-    color: black;
-    margin-bottom: 20px;
-  }
-
-  &__img-wrap {
-    column-count: 2;
-    column-gap: 50px;
-    width: 100%;
-  }
-
-  &__img {
-    break-inside: avoid;
-    margin-bottom: 50px;
-    width: 100%;
-
-    img {
-      width: 100%;
-      height: auto;
-      object-fit: cover;
-    }
-  }
-}
-
-.section-program {
-  width: 100%;
-  background-color: #d26060;
-  padding: v.$section-padding;
-
-  &__container {
-    @include m.container;
-  }
-
-  &__title {
-    color: white;
-    font-family: v.$font-title;
-    font-size: 35px;
-    text-align: center;
-    margin-bottom: 70px;
-
-    @include m.title-line;
-  }
-
-  &__box-wrap {
+  &-title__wrap {
     display: flex;
-    gap: 100px;
-  }
+    flex-direction: column;
+    justify-content: end;
 
-  &__img {
-    width: 550px;
-    height: 300px;
-
-    img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
+    p {
+      width: 850px;
+      color: v.$clr-black;
+      line-height: 35px;
     }
   }
 
-  &__bottom {
-    width: 100%;
-    background-color: #db9a96;
-    padding: 30px;
-    text-align: center;
-    font-family: v.$font-title;
-    font-size: 20px;
+  &-title {
+    color: v.$clr-black;
+    font-family: v.$font-dohyeon;
+    font-size: 30px;
+    margin-bottom: 30px;
+  }
 
+  &-top__bar {
+    width: 1200px;
+    height: 100px;
+    background-color: v.$clr-section-bar;
+    font-size: 18px;
+    justify-content: center;
+    font-family: v.$font-dohyeon;
+    line-height: 30px;
+    margin-bottom: 100px;
     @include m.flex-center-column;
   }
 }
 
-.section-work {
-  width: 100%;
-  background-color: v.$clr-white;
-  padding: v.$section-padding;
+.chapter {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  color: v.$clr-black;
+  align-items: end;
+  margin-bottom: 150px;
 
-  &__container {
-    @include m.container;
+  &-title {
+    font-size: 25px;
+    font-family: v.$font-dohyeon;
+    margin-bottom: 20px;
   }
 
+  &-list {
+    line-height: 30px;
+  }
+
+  &-img {
+    width: 244px;
+    height: 351px;
+    background-image: url("../../assets/img/main/chapter-img.png");
+  }
+}
+
+.section-program {
+  color: v.$clr-black;
+  margin-bottom: 150px;
+
   &__title {
-    font-size: 25px;
-    font-family: v.$font-title;
-    color: black;
+    font-size: 30px;
+    font-family: v.$font-dohyeon;
+  }
+
+  &__sub-title {
+    font-size: 18px;
+    margin-bottom: 20px;
+
+    span {
+      text-decoration: underline;
+      font-weight: bold;
+      cursor: pointer;
+    }
+  }
+
+  &__con-wrap {
+    display: flex;
+    justify-content: space-between;
+
+    .section-program__img {
+      margin-bottom: 20px;
+    }
+
+    .section-program__info p:nth-child(1) {
+      font-size: 20px;
+      font-family: v.$font-dohyeon;
+    }
+  }
+}
+
+.section-work {
+  color: v.$clr-black;
+  background-color: v.$clr-white;
+
+  &__title {
+    font-size: 30px;
+    font-family: v.$font-dohyeon;
     margin-bottom: 20px;
   }
 
   &__img-wrap {
     display: grid;
-    grid-template-columns: repeat(6, 1fr); // 가로를 1대1 비율로 나열
+    grid-template-columns: repeat(6, 1fr);
     gap: 20px;
     width: 100%;
 
@@ -252,6 +218,41 @@
   }
 }
 
+.section-exhibition {
+  padding: v.$section-padding;
+  width: 100%;
+  background-color: v.$clr-white;
+
+  &__container {
+    @include m.container;
+  }
+
+  &__title {
+    font-size: 25px;
+    font-family: v.$font-dohyeon;
+    color: black;
+    margin-bottom: 20px;
+  }
+
+  &__img-wrap {
+    column-count: 2;
+    column-gap: 50px;
+    width: 100%;
+  }
+
+  &__img {
+    break-inside: avoid;
+    margin-bottom: 50px;
+    width: 100%;
+
+    img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+    }
+  }
+}
+
 .contact {
   width: 100%;
   padding: 200px 0 100px 0;
@@ -259,13 +260,21 @@
   text-align: center;
 
   &-title {
-    font-family: v.$font-title;
+    font-family: v.$font-dohyeon;
     font-size: 25px;
     color: black;
 
+    &::before {
+      content: "";
+      width: 100%;
+      border: 1px solid rgb(225, 225, 225);
+      display: block;
+      margin-bottom: 10px;
+    }
+
     &__sub {
       color: black;
-      font-family: v.$font-title;
+      font-family: v.$font-dohyeon;
       font-size: 16px;
       margin-bottom: 30px;
     }
@@ -294,4 +303,14 @@
       }
     }
   }
+}
+
+.top {
+  width: 50px;
+  height: 50px;
+  background-image: url("../../assets/img/main/top_btn.png");
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  cursor: pointer;
 }

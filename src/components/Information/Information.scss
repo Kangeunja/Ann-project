@@ -1,0 +1,61 @@
+@use "../../styles/variables" as v;
+@use "../../styles/mixins" as m;
+
+.information {
+  background-color: v.$clr-white;
+
+  &-img {
+    width: 100vw;
+    height: 150px;
+    background-image: url("../../assets/img/information/main.png");
+    background-position: center;
+  }
+
+  &-container {
+    @include m.container;
+  }
+
+  &-title {
+    padding-top: 50px;
+    color: v.$clr-black;
+    font-weight: bold;
+    margin-bottom: 30px;
+  }
+
+  &-info {
+    color: v.$clr-black;
+    display: flex;
+    line-height: 30px;
+
+    p:nth-child(1) {
+      margin-right: 30px;
+      font-size: 18px;
+      font-weight: 500;
+      width: 50px;
+    }
+  }
+
+  &-map {
+    width: 990px;
+    height: 470px;
+    background-color: v.$clr-white;
+    border: 1px solid #e1e1e1;
+    margin-top: 50px;
+    margin-bottom: 100px;
+  }
+}
+
+.map-info {
+  color: v.$clr-black;
+  padding: 10px;
+  box-sizing: border-box;
+
+  p:nth-child(1) {
+    font-weight: 500;
+  }
+
+  p:nth-child(2) {
+    font-size: 14px;
+    color: #bababa;
+  }
+}
